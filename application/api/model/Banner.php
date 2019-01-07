@@ -9,19 +9,13 @@
 namespace app\api\model;
 
 
-use think\Db;
-use think\Model;
-
-class Banner extends Model
+class Banner extends BaseModel
 {
     protected $hidden=['id','delete_time','update_time'];
 
     public static function getBannerByID($id){
         $banner =self::with(['items','items.img'])->find($id);
         return $banner;
-        //根据id获取banner信息
-//        $result=Db::query("select * from banner_item where banner_id=?",[$id]);
-//        return $result;
     }
 
     public function items(){

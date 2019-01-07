@@ -12,10 +12,11 @@ class Banner
     {
         (new IDMustBePostiveInt())->goCheck();
         $banner=BannerModel::getBannerByID($id);
-        //$banner->hidden(['delete_time','update_time']);
+
         if(!$banner){
             throw new BannerMessException();
         }
+
         return $banner;
     }
 }

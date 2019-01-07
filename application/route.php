@@ -11,4 +11,6 @@
 
 use think\Route;
 //Route::rule('路由表达式','路由地址','请求类型','路由参数','变量规则');
-Route::get('api/v1/banner/:id','api/v1.Banner/getBanner');
+Route::get('api/:version/banner/:id','api/:version.Banner/getBanner');
+Route::get('api/:version/theme','api/:version.Theme/getSimpleList');
+Route::get('api/:version/theme/:id','api/:version.Theme/getComplexOne');
